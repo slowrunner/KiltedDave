@@ -1,0 +1,14 @@
+LICENSE.md
+README.md
+easy_ina219.py
+ina219.py
+setup.py
+gopigo3_ina219.egg-info/PKG-INFO
+gopigo3_ina219.egg-info/SOURCES.txt
+gopigo3_ina219.egg-info/dependency_links.txt
+gopigo3_ina219.egg-info/requires.txt
+gopigo3_ina219.egg-info/top_level.txt
+tests/test_configuration.py
+tests/test_constructor.py
+tests/test_read.py
+tests/test_read_auto_gain.py

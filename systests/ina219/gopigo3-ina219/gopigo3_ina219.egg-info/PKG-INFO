@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: gopigo3-ina219
+Version: 1.4.1.2
+Summary: This Python library for Raspberry Pi 5 on GoPiGo3 robots makes it easy to leverage the complex functionality of the Texas Instruments INA219 sensor to measure voltage, current and power.
+Home-page: https://github.com/slowrunner/HumbleDave2
+Author: Chris Borrill, slowrunner
+Author-email: slowrunner@noreply.github.com
+License: MIT
+Keywords: ina219 raspberrypi gopigo3
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: System :: Hardware :: Hardware Drivers
+License-File: LICENSE.md

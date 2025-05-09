@@ -1,0 +1,9 @@
+ [Unit]
+ Description=New GoPiGo3 Power Service
+
+ [Service]
+ Type=idle
+ ExecStart=/usr/bin/env bash  /home/ubuntu/KiltedDave/config/new_gopigo3_power.sh
+
+ [Install]
+ WantedBy=multi-user.target
