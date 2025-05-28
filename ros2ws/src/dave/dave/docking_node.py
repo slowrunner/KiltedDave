@@ -55,9 +55,11 @@ import threading
 
 
 DOCKING_SPEED_MPS = 0.07  # Docking speed in m/s
-DOCKING_DIST_CM = -17.5  # cm
+DOCKING_DIST_CM = -3.5  # cm
+# DOCKING_DIST_CM = -17.5  # cm
 FIXDOCKING_DIST_CM = -1.0
-UNDOCKING_DIST_CM = 17.0 # cm
+UNDOCKING_DIST_CM = 3.0 # cm
+# UNDOCKING_DIST_CM = 17.0 # cm
 
 # DEBUG = True
 DEBUG = False
@@ -69,7 +71,7 @@ class Docking(Node):
 
     def __init__(self):
         super().__init__('docking')
-        sub_cb_grp = None
+        sub_cb_grp = ReentrantCallbackGroup()
         svc_cb_grp = None
         main_cb_grp = None
 
@@ -93,6 +95,9 @@ class Docking(Node):
 
 
     def battery_state_cb(self,battery_state_msg):
+        dtstr = dt.datetime.now().strftime(DT_FORMAT)[:-3]
+        printMsg = 'docking_node.battery_state_cb(): battery_state_msg.charging: {}'.format(battery_state_msg.charging)
+        if DEBUG: print(dtstr,printMsg)
         self.is_charging = battery_state_msg.charging
         if self.is_charging != self.prior_is_charging:  # something changed
             if (self.is_charging):        # was not charging, now charging
@@ -119,7 +124,7 @@ class Docking(Node):
         self.egpg.drive_cm(DOCKING_DIST_CM)
         self.is_docked = True
 
-        sleep(10)  # allow charging to start
+        sleep(15)  # allow charging to start (and battery_state_cb to set charging)
 
         response.is_docked = self.is_docked
         response.is_charging = self.is_charging
