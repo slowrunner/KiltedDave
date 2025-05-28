@@ -11,14 +11,15 @@ cd ~/KiltedDave/ros2ws
 echo "*** rosdep install -i --from-path src"
 rosdep install -i --from-path src
 
+colcon build
 
-echo "*** colcon build --packages-select ros2_gopigo3_msg "
-colcon build --packages-select --allow-overriding ros2_gopigo3_msg 
+# echo "*** colcon build --packages-select ros2_gopigo3_msg "
+# colcon build --packages-select --allow-overriding ros2_gopigo3_msg 
 
-echo "*** colcon build --packages-select dave_interfaces "
-colcon build --packages-select --allow-overriding dave_interfaces  
+# echo "*** colcon build --packages-select dave_interfaces "
+# colcon build --packages-select --allow-overriding dave_interfaces  
 
-echo "*** colcon build --packages-select ros2_gopigo3_node"
+# echo "*** colcon build --packages-select ros2_gopigo3_node"
 colcon build --symlink-install --packages-select ros2_gopigo3_node
 
 # echo "*** colcon build --packages-select teleop_gopigo3_keyboard"

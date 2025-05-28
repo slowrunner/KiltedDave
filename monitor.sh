@@ -19,13 +19,13 @@ echo  -e "ROS Topic List:"
 echo -e $procs
 
 if grep -q "$procs" <<< "battery_state"; then
-    # Check Battery Percentage
+    echo -e "Check Battery Percentage"
     batt=$(ros2 topic echo --once --field percentage --qos-reliability best_effort --qos-durability volatile /battery_state)
     batt="${batt:0:4}"
 fi
 
 if grep -q "$procs" <<< "dock_status"; then
-    # Checking Docking State
+    echo -e "Checking Docking State"
     docked=$(ros2 topic echo --once --field is_docked --qos-reliability best_effort --qos-durability volatile /dock_status)
 fi
 
