@@ -8,6 +8,7 @@
 #   Playtimes:           ": success "
 #   Sessions:            "- boot -"              ( "\- boot \-" search string )
 #   Safety shutdowns:    "SAFETY SHUTDOWN"
+#   failure
 #
 # Summed Keys:
 #   Undocking, ... after __
@@ -53,6 +54,8 @@ aveSession=`(echo "scale=1; ($totalAwake / $booted)" | bc -l)`
 echo "Average Session: " $aveSession "hrs"
 safetyShutdowns=`(grep -c "SAFETY SHUTDOWN" $fn)`
 echo "Safety Shutdowns: " $safetyShutdowns 
+dockingFailures=`(grep -c "Docking : failure" $fn)`
+echo "Docking Failures: " $dockingFailures 
 totalMoved=`(awk -F'moved:' '{sum+=$2}END{printf "%.1f", sum;}' $ofn)`
 totalMovedFt=`(echo "scale=1; ($totalMoved / 0.3048)" | bc)`
 echo "Total Travel: " $totalMoved "meters" $totalMovedFt "feet"
