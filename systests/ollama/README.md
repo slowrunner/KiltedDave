@@ -29,5 +29,7 @@ ubuntu@kilteddave:~/KiltedDave/systests/ollama$
 
 *** Install Python API for Ollama
 ```
-sudo apt install python3-ollama
+# sudo apt install python3-ollama --  not available for Ubuntu 24.04 Rapsberry Pi 4
+pip install ollama --break-system-packages
 ```
+
