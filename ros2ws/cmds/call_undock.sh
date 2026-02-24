@@ -18,3 +18,4 @@ echo -e "\nNOTE: IF dave_node is running, dave_node will also call /undock"
 echo -e "\n*** Calling docking_node /undock service"
 echo -e "ros2 service call /undock dave_interfaces/srv/Undock"
 ros2 service call /undock dave_interfaces/srv/Undock
+../utils/logMaintenance.py "Manual Undock Requested via cmds/call_undock.sh"

@@ -57,7 +57,7 @@ if grep -q "$procs" <<< "dock"; then
     echo "Battery: $batt  Docked: $docked"; \
 fi
 
-# ps -e -o %cpu,%mem,cmd | grep  'CPU\|MEM\|CMD\|rplidar\|robot\|joint\|oak\|nav\|slam\|turtlebot4\|dave' | grep -v "grep" | sort -rk 1 ; \
-# sleep 5; \
+ps -e -o %cpu,%mem,cmd | grep  'CPU\|MEM\|CMD\|rplidar\|robot\|joint\|oak\|nav\|slam\|dave\|logife\|wheel' | grep -v "grep" | sort -rk 1 ; \
+sleep 5; \
 echo " "; \
 done

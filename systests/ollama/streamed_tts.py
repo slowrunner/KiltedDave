@@ -7,8 +7,9 @@ import datetime as dt
 import subprocess
 
 def say(phrase):
-  vol = 85
-  subprocess.check_output(['espeak-ng -a'+str(vol)+' "%s"' % phrase], stderr=subprocess.STDOUT, shell=True)
+  # vol = 85
+  # subprocess.check_output(['espeak-ng -a'+str(vol)+' "%s"' % phrase], stderr=subprocess.STDOUT, shell=True)
+  subprocess.Popen(["espeak-ng", phrase])
 
 def print_wrapped(long_string):
   try:
@@ -22,7 +23,8 @@ def print_wrapped(long_string):
 
 # Use the generate function for a one-off prompt
 # result = ollama.generate(model='llama2', prompt='Why is the sky blue?')
-current_prompt='Why is the sky blue?'
+# current_prompt='Why is the sky blue?'
+current_prompt='OK Dave, I am going to take a shower now.  Talk to you later."'
 model='tinyllama'
 print(f"Starting Ollama with model: {model}")
 print("\nPrompt:")

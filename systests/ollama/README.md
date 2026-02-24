@@ -33,3 +33,16 @@ ubuntu@kilteddave:~/KiltedDave/systests/ollama$
 pip install ollama --break-system-packages
 ```
 
+=== Remove ollama ===  
+
+sudo systemctl stop ollama
+sudo systemctl disable ollama
+sudo rm /etc/systemd/system/ollama.service
+sudo rm $(which ollama)
+sudo rm -rf /usr/share/ollama
+sudo rm -rf /etc/ollama
+sudo rm -rf /usr/local/lib/ollama  (3G)
+sudo rm -rf /home/.ollama*
+
+sudo userdel ollama
+sudo groupdel ollama

@@ -1,3 +1,3 @@
 # Models directory
 
-No models here yet
+vosk-model-small-en-us-0.15:  Vosk Speech To Text Recognizer (see systests/vosk)
