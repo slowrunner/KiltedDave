@@ -9,24 +9,26 @@ Connect HDMI_2, keyboard
 2) First boot  
 user ubuntu, US etc, hostname kilteddave, wireless xxxxxx  
 
-3) Setup SSH:  
+3) Setup SSH:
+```  
   sudo apt install openssh-server -y  
   sudo systemctl status ssh  
   sudo ufw allow ssh  
   sudo apt install net-tools  (to get ifconfig)  
   ifconfig  (wlan0 = 10.0.0.xxx)  
+```
 
-
-4) Network: Disable IPv6  
+5) Network: Disable IPv6  
 
 
 
 Check memory:  
+```
 free -h  
                total        used        free      shared  buff/cache   available  
 Mem:           3.7Gi       444Mi       1.3Gi       3.3Mi       2.1Gi       3.3Gi  
 Swap:          0.0Gi          0B       0.0Gi  
-
+```
 
 
 htop:  263MB memory used of 3.7GB  
@@ -57,6 +59,8 @@ ubuntu@kilteddave:~$ groups
 ubuntu adm dialout cdrom sudo audio video plugdev games users netdev render input gpio spi i2c  
 
 Create pi user  
+
+```
 sudo useradd -m -g ubuntu pi  
 sudo passwd pi  
   Newpassword: ...  
@@ -66,6 +70,7 @@ pi
 $ groups  
 ubuntu  
 $ exit  
+
 
 sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,netdev,render,input,gpio,spi,i2c pi  
 ubuntu@kilteddave:~$ groups pi  
@@ -77,6 +82,7 @@ ubuntu : ubuntu adm dialout cdrom sudo audio video plugdev games users input ren
 
 sudo chmod 777 /home/pi  
 ./get_dexter_software.sh  
+```
 
 needs redo to remove setup.py easy_install   
 REF: https://packaging.python.org/en/latest/guides/modernize-setup-py-project/  
@@ -90,6 +96,7 @@ sudo apt install imagemagick
 
 
 created ~/.asoundrc:  
+```
 pcm.!default {  
   type plug  
   slave {  
@@ -101,7 +108,7 @@ ctl.!default {
   type hw  
   card 1  
 }  
-
+```
 sudo apt install alsa-utils  
 alsamixer  (F6 - select USB card)  
 sudo alsactl store  
