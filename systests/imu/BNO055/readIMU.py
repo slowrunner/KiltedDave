@@ -57,7 +57,7 @@ except:
 # so using ros_safe_inertial_measurement_unit.py
 
 from ros_safe_inertial_measurement_unit import SafeIMUSensor
-import runLog
+# import runLog
 
 # Port must be "AD1" or "AD2" to force software I2C that properly implements clock stretch
 PORT = "AD1"
@@ -120,7 +120,7 @@ def readAndPrint(imu,cnt=1,delay=0.01,cr = False):
             printReadings(readIMU(imu),cr)
             time.sleep(delay)
 
-@runLog.logRun
+# @runLog.logRun
 def main():
     print("\nReading the Dexter Industries IMU Sensor")
     print("Using mutex-protected, exception-tolerant SW I2C on GoPiGo3 port {}\n".format(PORT))
