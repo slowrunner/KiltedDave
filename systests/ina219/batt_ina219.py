@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+
+# pip3 install pi-ina219
+# (sudo nano /boot/firmware/config.txt)
+# - uncomment #dtparam=i2c_arm=on
+# reboot
+
 from ina219 import INA219
 from ina219 import DeviceRangeError
 import inspect
