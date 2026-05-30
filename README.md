@@ -10,7 +10,7 @@ ROS2 Humble and Ubuntu 22.04 (ROS2-GoPiGo3)
 **Autonomous ROS2 home robot based on GoPiGo3 and Raspberry Pi 4**
 
 
-<img src="https://github.com/slowrunner/HumbleDave2/blob/main/Graphics/2025-04-06_HumbleDave2.JPG" height="504" />
+<img src="https://github.com/slowrunner/HumbleDave2/blob/main/Graphics/2025-05-27_Kilted_Dave.JPG" height="504" />
 
 
 ROSbot Specs:
